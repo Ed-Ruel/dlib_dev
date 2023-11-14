@@ -41,18 +41,18 @@ class VideoProcessor:
         		# cv2.circle(img, (i,y), 2, (0, 255, 0), -1)
         
             # Counts the landmarks
-            if i==0:
-                    print("Total number of face landmarks detected ",len(s_.parts()))
-                    
-                    drawPoints(img, s_, 0, 16)           # Jaw line
-                    drawPoints(img, s_, 17, 21)          # Left eyebrow
-                    drawPoints(img, s_, 22, 26)          # Right eyebrow
-                    drawPoints(img, s_, 27, 30)          # Nose bridge
-                    drawPoints(img, s_, 30, 35, True)    # Lower nose
-                    drawPoints(img, s_, 36, 41, True)    # Left eye
-                    drawPoints(img, s_, 42, 47, True)    # Right Eye
-                    drawPoints(img, s_, 48, 59, True)    # Outer lip
-                    drawPoints(img, s_, 60, 67, True)    # Inner lip
+                if i==0:
+                        print("Total number of face landmarks detected ",len(s_.parts()))
+                        
+                        drawPoints(img, s_, 0, 16)           # Jaw line
+                        drawPoints(img, s_, 17, 21)          # Left eyebrow
+                        drawPoints(img, s_, 22, 26)          # Right eyebrow
+                        drawPoints(img, s_, 27, 30)          # Nose bridge
+                        drawPoints(img, s_, 30, 35, True)    # Lower nose
+                        drawPoints(img, s_, 36, 41, True)    # Left eye
+                        drawPoints(img, s_, 42, 47, True)    # Right Eye
+                        drawPoints(img, s_, 48, 59, True)    # Outer lip
+                        drawPoints(img, s_, 60, 67, True)    # Inner lip
 
         return av.VideoFrame.from_ndarray(img, format="bgr24")
 
