@@ -37,7 +37,7 @@ class VideoProcessor:
         	s = predictor(gray, rect)
         	s = face_utils.shape_to_np(s)
             
-                if i==0:
+            if i==0:
                     print("Total number of face landmarks detected ",len(s_.parts()))
                     
                     drawPoints(img, s_, 0, 16)           # Jaw line
