@@ -37,7 +37,7 @@ class VideoProcessor:
         	s = predictor(gray, rect)
         	s = face_utils.shape_to_np(s)
             
-        if i==0:
+            if i==0:
                 print("Total number of face landmarks detected ",len(s_.parts()))
                     
                 drawPoints(img, s_, 0, 16)           # Jaw line
@@ -50,8 +50,8 @@ class VideoProcessor:
                 drawPoints(img, s_, 48, 59, True)    # Outer lip
                 drawPoints(img, s_, 60, 67, True)    # Inner lip
              
-        	# for(i, y) in s:
-        		# cv2.circle(img, (i,y), 2, (0, 255, 0), -1)
+        	for(i, y) in s:
+        		cv2.circle(img, (i,y), 2, (0, 255, 0), -1)
 
         return av.VideoFrame.from_ndarray(img, format="bgr24")
 
