@@ -37,6 +37,8 @@ class VideoProcessor:
         	s = predictor(gray, rect)
         	s = face_utils.shape_to_np(s)
             
+        	for(i, y) in s:
+        		cv2.circle(img, (i,y), 2, (0, 255, 0), -1)
 
         return av.VideoFrame.from_ndarray(img, format="bgr24")
 
