@@ -16,7 +16,7 @@ predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
 
 class VideoProcessor:
 
-    # This below mehtod will draw all those points which are from 0 to 67 on face one by one.
+    # This below method will draw all those points which are from 0 to 67 on face one by one.
     def drawPoints(image, faceLandmarks, startpoint, endpoint, isClosed=False):
         points = []
         for i in range(startpoint, endpoint+1):
