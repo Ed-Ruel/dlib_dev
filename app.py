@@ -16,7 +16,7 @@ predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
 
 class VideoProcessor:
 
-    # This below method will draw all those points which are from 0 to 67 on face one by one.
+    # This below mehtod will draw all those points which are from 0 to 67 on face one by one.
     def drawPoints(image, faceLandmarks, startpoint, endpoint, isClosed=False):
         points = []
         for i in range(startpoint, endpoint+1):
@@ -36,7 +36,7 @@ class VideoProcessor:
         for (i, rect) in enumerate(rects):
         	s = predictor(gray, rect)
         	s = face_utils.shape_to_np(s)
-            
+             
         	for(i, y) in s:
         		cv2.circle(img, (i,y), 2, (0, 255, 0), -1)
 
@@ -53,7 +53,6 @@ webrtc_streamer(key="dlib", mode=WebRtcMode.SENDRECV,
                               video_processor_factory=VideoProcessor,
                               media_stream_constraints={"video": True, "audio": False},
                               async_processing=True)
-
 
 
 
